@@ -47,7 +47,7 @@ const MovieCard = (props) => {
       <Modal
         isOpen={showModal}
         onRequestClose={() => setShowModal(false)}
-        className="modall"
+        className="myModal"
         contentLabel="Example Modal"
       >
         <label for="fname">Movie Name</label>
@@ -96,6 +96,12 @@ const MovieCard = (props) => {
           value={image}
           onChange={(event) => setImage(event.target.value)}
         />
+        <button
+          className="btn btn-danger float-right"
+          onClick={() => setShowModal(false)}
+        >
+          close
+        </button>
         <button
           className="btn btn-primary float-right"
           onClick={() => {

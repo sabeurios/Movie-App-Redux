@@ -34,7 +34,7 @@ const MyModal = ({ addMovie }) => {
       <Modal
         isOpen={showModal}
         onRequestClose={() => setShowModal(false)}
-        className="modall"
+        className="myModal"
         contentLabel="Example Modal"
       >
         <label for="fname">Movie Name</label>
@@ -84,9 +84,16 @@ const MyModal = ({ addMovie }) => {
           onChange={(event) => setImage(event.target.value)}
         />
         <button
-          className="btn btn-primary float-right"
+          className="btn btn-danger  float-right"
+          onClick={() => setShowModal(false)}
+        >
+          close
+        </button>
+        <button
+          className="btn btn-success  float-right"
           onClick={() => {
             addNewMovie();
+            alert("Added successfully")
             setShowModal(false);
           }}
         >

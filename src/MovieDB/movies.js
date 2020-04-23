@@ -5,7 +5,7 @@ const movies=[
         rate: 5,
         imageUrl: "https://images.filmstoon.xyz/img/2020-03/1584877291_la-plateforme-el-hoyo-2020.jpg",
         year: "2020",
-        description: "a Spanish science fiction horror-thriller film, directed by Galder Gaztelu-Urrutia",
+        description: "a Spanish science fiction horror-thriller film,git  directed by Galder Gaztelu-Urrutia",
         isEditable: false,
     },
     {

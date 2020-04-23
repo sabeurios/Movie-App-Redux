@@ -1,0 +1,166 @@
+.App {
+  text-align: center;
+}
+.card{
+  border: 1px solid black;
+  margin: 30px;
+  width:  18rem;
+  height: 33rem;
+  -webkit-box-shadow: 25px 22px 39px -6px rgba(0,0,0,0.47);
+-moz-box-shadow: 25px 22px 39px -6px rgba(0,0,0,0.47);
+box-shadow: 25px 22px 39px -6px rgba(0,0,0,0.47);
+}
+.search-stars{
+  background-color: #e7a61a;
+}
+.global-container{
+border: 1px solid;
+margin: 100px;
+align-items: center;
+display: flex;
+flex-direction: column;
+}
+.container{
+display: flex; 
+flex-direction: column;
+align-items: center;
+}
+.movies-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex: start;
+  width: 1044px;
+}
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px;
+}
+.card-img-top{
+  width: 224px;
+  height: 340px;
+}
+.card-body{
+  height: 15px;
+}
+.card-body>p{
+  font-size: 12px;
+}
+.card{
+  width: 18rem;
+}
+.add-card{
+  position: relative;
+  border: 1px black solid;
+  width: 200px;
+  height: 388px;
+  margin: 33px 91px;
+}
+.add-card img{
+  width: 50%;
+  position: absolute;
+  top: 125px;
+  left: 50px;
+}
+
+.nav-container{
+  margin-top: 35px;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 100px;
+  align-items: center;
+}
+.nav-container input{
+  width: 400px;
+  border-radius: 6px;
+}
+.form-container{
+  flex:2;
+  padding-left: 50px;
+}
+.filer-rate{
+  flex:1;
+}
+.movieRating{
+  cursor: pointer;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+.input-sub {
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.input-sub:hover {
+  background-color: #45a049;
+}
+
+/* div {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+} */
+.btn-modal{
+  width: 200px;
+  height: 200px;
+  margin: 20px;
+  background-color: rgb(233, 230, 225);
+}
+.modall{
+      position: absolute;
+    top: 40px;
+    left: 255px;
+    right: 40px;
+    bottom: 40px;
+    border: 1px solid rgb(204, 204, 204);
+    background: rgb(255, 255, 255);
+    overflow: auto;
+    border-radius: 4px;
+    outline: none;
+    padding: 20px;
+  width: 800px;
+  height: 440px;
+}
+.img-plus{
+  width: 180px;
+  height: 180px;
+}
+.center {
+  margin: auto;
+  width: 50%;
+  max-width: 400px;
+  min-width: 150px;
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  transform: translate(-50%, -50%);
+  font-size: 20px;
+}
+div.loader {
+  font-size: 100px;
+}
+.loading{
+  display: inline-grid;
+}
+.loading>span{
+  font-size: 20px;
+}
+.button-card button{
+  width: 93px;
+  margin: 17px 15px;
+}

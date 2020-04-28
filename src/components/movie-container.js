@@ -1,6 +1,5 @@
 import React from "react";
 import MovieCard from "./movie-card";
-import { connect } from "react-redux";
 
 const MoviesContainer = ({ movies }) => {
   return (
@@ -13,7 +12,4 @@ const MoviesContainer = ({ movies }) => {
     </div>
   );
 };
-const mapStateToProps = (state) => ({
-  movies: state.movies,
-});
-export default connect(mapStateToProps, null)(MoviesContainer);
+export default (MoviesContainer);

@@ -6,7 +6,6 @@ import FilterByName from "../components/filter-by-name";
 import ModalAdd from "../components/modal-add";
 
 const MoviesMainPage = ({ movies, inputName, min_Rate }) => {
-  
   let filteredMovies = movies.filter(
     (movie) =>
       movie.rate >= min_Rate &&

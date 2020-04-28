@@ -32,11 +32,13 @@ const reducer = (state = initialState, action) => {
 
     case ADD_MOVIE:
       return {
+        ...state,
         movies: [...state.movies, payload],
       };
 
     case REMOVE_MOVIE:
       return {
+        ...state,
         movies: state.movies.filter((movie) => movie.id !== payload),
       };
 

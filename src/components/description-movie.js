@@ -5,12 +5,12 @@ import StarRating from "./star-rating";
 
 class DescriptionMovie extends React.Component {
   state = {
-    id: this.props.match.params.id,
+    title: this.props.match.params.title,
   };
 
   render() {
     const targetMovie = this.props.movies.find(
-      (movie) => movie.id === this.state.id
+      (movie) => movie.title === this.state.title
     );
 
     return (

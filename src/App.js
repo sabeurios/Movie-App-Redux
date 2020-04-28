@@ -23,7 +23,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <Route exact path="/" component={MoviesMainPage} />
-        <Route exact path="/:id" component={DescriptionMovie} /> 
+        <Route exact path="/:title" component={DescriptionMovie} /> 
       </div>
     );
   }

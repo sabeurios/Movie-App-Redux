@@ -20,7 +20,7 @@ const MovieCard = (props) => {
         <div>
           <button
             className="btn btn-outline-secondary"
-            onClick={() => history.push(`/${movie.id}`)}
+            onClick={() => history.push(`/${movie.title}`)}
           >
             Movie Description
           </button>

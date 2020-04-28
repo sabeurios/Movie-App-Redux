@@ -3,7 +3,7 @@ import Modal from "react-modal";
 import { connect } from "react-redux";
 import { addMovie } from "../Actions/actions";
 
-const MyModal = ({ addMovie }) => {
+const ModalAdd = ({ addMovie }) => {
   const [showModal, setShowModal] = useState(false);
   const [title, setTitle] = useState("");
   const [rate, setRate] = useState("");
@@ -19,7 +19,6 @@ const MyModal = ({ addMovie }) => {
       imageUrl: image,
       year: year,
       description: description,
-      isEditable: "false",
     });
   };
 
@@ -93,7 +92,7 @@ const MyModal = ({ addMovie }) => {
           className="btn btn-success  float-right"
           onClick={() => {
             addNewMovie();
-            alert("Added successfully")
+            alert("Added successfully");
             setShowModal(false);
           }}
         >
@@ -103,11 +102,7 @@ const MyModal = ({ addMovie }) => {
     </div>
   );
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addMovie: (payload) => {
-      dispatch(addMovie(payload));
-    },
-  };
-};
-export default connect(null, mapDispatchToProps)(MyModal);
+const mapDispatchToProps = (dispatch) => ({
+  addMovie: (obj) => dispatch(addMovie(obj)),
+});
+export default connect(null, mapDispatchToProps)(ModalAdd);

@@ -3,12 +3,34 @@ import movies from "../MovieDB/movies";
 
 const initialState = {
   movies,
+  searchName: "",
+  searchRate: 0,
 };
 
 const reducer = (state = initialState, action) => {
-  const { payload, type } = action;
-  const { ADD_MOVIE, REMOVE_MOVIE, EDIT_MOVIE } = actionTypes;
+  const { payload,type } = action;
+  const {
+    INPUT_SEARCH_NAME,
+    INPUT_SEARCH_RATE,
+    ADD_MOVIE,
+    REMOVE_MOVIE,
+    EDIT_MOVIE,
+    UPDATE_MOVIE,
+  } = actionTypes;
+
   switch (type) {
+    case INPUT_SEARCH_NAME:
+      return {
+        ...state,
+        searchName: payload.value,
+      };
+
+    case INPUT_SEARCH_RATE:
+      return {
+        ...state,
+        searchRate: payload,
+      };
+
     case ADD_MOVIE:
       return {
         movies: [...state.movies, payload],
@@ -27,20 +49,11 @@ const reducer = (state = initialState, action) => {
             : movie
         ),
       };
-    case "UPDATE_MOVIE":
+    case UPDATE_MOVIE:
       return {
+        ...state,
         movies: state.movies.map((movie) =>
-          movie.id === payload.id
-            ? {
-                ...movie,
-                title: payload.title,
-                rate: payload.rate,
-                imageUrl: payload.imageUrl,
-                year: payload.year,
-                description: payload.description,
-                isEditable: !movie.isEditable,
-              }
-            : movie
+          movie.id === payload.id ? { ...payload } : movie
         ),
       };
     default:

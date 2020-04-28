@@ -12,6 +12,7 @@ box-shadow: 25px 22px 39px -6px rgba(0,0,0,0.47);
 }
 .search-stars{
   background-color: #e7a61a;
+  cursor: not-allowed;
 }
 .global-container{
 border: 1px solid;
@@ -19,6 +20,7 @@ margin: 100px;
 align-items: center;
 display: flex;
 flex-direction: column;
+border-radius: 5px;
 -webkit-box-shadow: inset 0px 0px 47px 0px rgba(0,0,0,1);
 -moz-box-shadow: inset 0px 0px 47px 0px rgba(0,0,0,1);
 box-shadow: inset 0px 0px 47px 0px rgba(0,0,0,1);
@@ -58,6 +60,13 @@ align-items: center;
   width: 200px;
   height: 388px;
   margin: 33px 91px;
+  -webkit-box-shadow: 0px 0px 153px -5px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 0px 153px -5px rgba(0,0,0,0.75);
+box-shadow: 0px 0px 153px -5px rgba(0,0,0,0.75);
+border-radius: 9px 9px 9px 9px;
+-moz-border-radius: 9px 9px 9px 9px;
+-webkit-border-radius: 9px 9px 9px 9px;
+border: 0px solid #000000;
 }
 .add-card img{
   width: 50%;
@@ -65,7 +74,9 @@ align-items: center;
   top: 125px;
   left: 50px;
 }
-
+.button-card{
+  display: flex;
+}
 .nav-container{
   margin-top: 35px;
   display: flex;
@@ -112,12 +123,6 @@ input[type=text], select {
 .input-sub:hover {
   background-color: #45a049;
 }
-
-/* div {
-  border-radius: 5px;
-  background-color: #f2f2f2;
-  padding: 20px;
-} */
 .btn-modal{
   width: 200px;
   height: 200px;
@@ -137,11 +142,20 @@ input[type=text], select {
     outline: none;
     padding: 20px;
     width: 800px;
-    height: 570px;
+    height: 558px;
+    background-color: #e7a61a;
+    border-radius: 10px 10px 10px 10px;
+-moz-border-radius: 10px 10px 10px 10px;
+-webkit-border-radius: 10px 10px 10px 10px;
+border: 0px solid #000000;
 }
 .myModal button{
   margin: 0px 10px;
   width: 95px;
+}
+.myModal label {
+  font-size: 20px;
+  margin: 0px !important;
 }
 .img-plus{
   width: 180px;
@@ -170,4 +184,17 @@ div.loader {
 .button-card button{
   width: 93px;
   margin: 17px 15px;
+}
+.fas{
+  color:#e7a61a;
+}
+.width-input{
+  width: 400px !important;
+  border-color: #e7a61a !important;
+}
+.span-color{
+  border-color: #e7a61a !important; 
+}
+hr{
+border-color: #e7a61a !important; ;  
 }

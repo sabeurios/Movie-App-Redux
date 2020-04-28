@@ -1,17 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import StarRating from "./star-rating";
-import Modal from "react-modal";
+import ModalEdit from "./modal-edit";
 import { connect } from "react-redux";
 import { removeMovie, editMovie, updateMovie } from "../Actions/actions";
+import { useHistory } from "react-router-dom";
 
 const MovieCard = (props) => {
   const { movie, idMovie } = props;
-  const [showModal, setShowModal] = useState(false);
-  const [title, setTitle] = useState("");
-  const [rate, setRate] = useState("");
-  const [image, setImage] = useState("");
-  const [year, setYear] = useState("");
-  const [description, setDescription] = useState("");
+  let history = useHistory();
 
   return (
     <div className="card">
@@ -22,19 +18,14 @@ const MovieCard = (props) => {
           {movie.title}-{movie.year}
         </h5>
         <div>
-          <button className="btn btn-outline-secondary">
+          <button
+            className="btn btn-outline-secondary"
+            onClick={() => history.push(`/${movie.id}`)}
+          >
             Movie Description
           </button>
           <div className="button-card">
-            <button
-              className="btn btn-secondary btn-sm"
-              onClick={() => {
-                setShowModal(true);
-                props.editMovie(movie.id);
-              }}
-            >
-              Edit
-            </button>
+            <ModalEdit movie={movie} />
             <button
               className="btn btn-secondary btn-sm"
               onClick={() => props.removeMovie(idMovie)}
@@ -44,95 +35,12 @@ const MovieCard = (props) => {
           </div>
         </div>
       </div>
-      <Modal
-        isOpen={showModal}
-        onRequestClose={() => setShowModal(false)}
-        className="myModal"
-        contentLabel="Example Modal"
-      >
-        <label for="fname">Movie Name</label>
-        <input
-          type="text"
-          id="fname"
-          name="title"
-          placeholder={movie.title}
-          value={title}
-          onChange={(event) => setTitle(event.target.value)}
-        />
-
-        <label for="lname">Movie rate</label>
-        <input
-          type="text"
-          id="lname"
-          name="rate"
-          placeholder={movie.rate}
-          value={rate}
-          onChange={(event) => setRate(event.target.value)}
-        />
-        <label for="lname">Production year</label>
-        <input
-          type="text"
-          id="lname"
-          name="year"
-          placeholder={movie.year}
-          value={year}
-          onChange={(event) => setYear(event.target.value)}
-        />
-        <label for="lname">Movie Description</label>
-        <input
-          type="text"
-          id="lname"
-          name="description"
-          placeholder={movie.description}
-          value={description}
-          onChange={(event) => setDescription(event.target.value)}
-        />
-        <label for="lname">Image Url</label>
-        <input
-          type="text"
-          id="lname"
-          name="imageUrl"
-          placeholder={movie.imageUrl}
-          value={image}
-          onChange={(event) => setImage(event.target.value)}
-        />
-        <button
-          className="btn btn-danger float-right"
-          onClick={() => setShowModal(false)}
-        >
-          close
-        </button>
-        <button
-          className="btn btn-primary float-right"
-          onClick={() => {
-            props.updateMovie({
-              id: movie.id,
-              title: title,
-              rate: rate,
-              imageUrl: image,
-              year: year,
-              description: description,
-            });
-            setShowModal(false);
-          }}
-        >
-          update
-        </button>
-      </Modal>
     </div>
   );
 };
-const mapDispatchToProps = (dispatch) => {
-  return {
-    removeMovie: (payload) => {
-      dispatch(removeMovie(payload));
-    },
-    editMovie: (payload) => {
-      dispatch(editMovie(payload));
-    },
-    updateMovie: (payload) => {
-      dispatch(updateMovie(payload));
-    },
-  };
-};
+const mapDispatchToProps = (dispatch) => ({
+  removeMovie: (id) => dispatch(removeMovie(id)),
+  editMovie: (id) => dispatch(editMovie(id)),
+  updateMovie: (obj) => dispatch(updateMovie(obj)),
+});
 export default connect(null, mapDispatchToProps)(MovieCard);

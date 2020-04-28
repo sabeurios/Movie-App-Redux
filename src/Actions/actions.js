@@ -26,13 +26,6 @@ export const removeMovie = (payload) => {
   };
 };
 
-export const editMovie = (payload) => {
-  return {
-    type: "EDIT_MOVIE",
-    payload,
-  };
-};
-
 export const updateMovie = (payload) => {
   return {
     type: "UPDATE_MOVIE",

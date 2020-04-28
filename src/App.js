@@ -22,9 +22,8 @@ class App extends React.Component {
     }
     return (
       <div className="App">
-        <MoviesMainPage />
-        <Route path="/:id" component={DescriptionMovie} />
         <Route exact path="/" component={MoviesMainPage} />
+        <Route exact path="/:id" component={DescriptionMovie} /> 
       </div>
     );
   }

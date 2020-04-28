@@ -2,7 +2,7 @@ import React from "react";
 import StarRating from "./star-rating";
 import ModalEdit from "./modal-edit";
 import { connect } from "react-redux";
-import { removeMovie, editMovie, updateMovie } from "../Actions/actions";
+import { removeMovie} from "../Actions/actions";
 import { useHistory } from "react-router-dom";
 
 const MovieCard = (props) => {
@@ -40,7 +40,5 @@ const MovieCard = (props) => {
 };
 const mapDispatchToProps = (dispatch) => ({
   removeMovie: (id) => dispatch(removeMovie(id)),
-  editMovie: (id) => dispatch(editMovie(id)),
-  updateMovie: (obj) => dispatch(updateMovie(obj)),
 });
 export default connect(null, mapDispatchToProps)(MovieCard);

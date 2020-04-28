@@ -1,13 +1,13 @@
 import React from "react";
 import MoviesContainer from "../components/movie-container";
 import { connect } from "react-redux";
-// import { searchMovie } from "../Actions/actions";
 import FilterByRate from "../components/filter-by-rate";
 import FilterByName from "../components/filter-by-name";
 import ModalAdd from "../components/modal-add";
 
 const MoviesMainPage = ({ movies, inputName, min_Rate }) => {
-  let filterMovie = movies.filter(
+  
+  let filteredMovies = movies.filter(
     (movie) =>
       movie.rate >= min_Rate &&
       movie.title.toLowerCase().includes(inputName.toLowerCase())
@@ -23,7 +23,7 @@ const MoviesMainPage = ({ movies, inputName, min_Rate }) => {
       </div>
       <hr />
       <div className="global-container">
-        <MoviesContainer movies={filterMovie} />
+        <MoviesContainer movies={filteredMovies} />
         <ModalAdd />
       </div>
     </div>
@@ -34,11 +34,4 @@ const mapStateToProps = (state) => ({
   inputName: state.searchName,
   min_Rate: state.searchRate,
 });
-// const mapDispatchToProps = (dispatch) => {
-//   return {
-//     searchMovie: (title, rate) => {
-//       dispatch(searchMovie(title, rate));
-//     },
-//   };
-// };
 export default connect(mapStateToProps, null)(MoviesMainPage);

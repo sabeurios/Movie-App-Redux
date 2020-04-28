@@ -14,7 +14,6 @@ const reducer = (state = initialState, action) => {
     INPUT_SEARCH_RATE,
     ADD_MOVIE,
     REMOVE_MOVIE,
-    EDIT_MOVIE,
     UPDATE_MOVIE,
   } = actionTypes;
 
@@ -41,14 +40,6 @@ const reducer = (state = initialState, action) => {
         movies: state.movies.filter((movie) => movie.id !== payload),
       };
 
-    case EDIT_MOVIE:
-      return {
-        movies: state.movies.map((movie) =>
-          movie.id === payload.id
-            ? { ...movie, isEditable: !movie.isEditable }
-            : movie
-        ),
-      };
     case UPDATE_MOVIE:
       return {
         ...state,
